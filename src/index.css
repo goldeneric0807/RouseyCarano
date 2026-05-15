@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Barlow:wght@300;400;500&display=swap');
+
+:root {
+  --red: #C8102E;
+  --red-dark: #8B0A1E;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --off-white: #F5F0E8;
+  --near-black: #0A0A0A;
+  --dark-gray: #141414;
+  --mid-gray: #2A2A2A;
+  --nav-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Barlow', sans-serif; background: var(--near-black); color: var(--off-white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+input, textarea, select { font-family: inherit; }
+
+/* ── NAV ── */
+.nav-desktop-links { display: flex; gap: 0.4rem; align-items: center; }
+.nav-hamburger-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.25rem; color: var(--off-white); flex-shrink: 0; }
+
+.nav-link {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.9rem;
+  border: 1px solid transparent; border-radius: 2px; cursor: pointer;
+  background: none; color: rgba(245,240,232,0.55); transition: all 0.2s;
+}
+.nav-link:hover { color: var(--off-white); }
+.nav-link-active { border-color: rgba(245,240,232,0.3); color: var(--off-white); }
+.nav-cta {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1.1rem;
+  border: 1px solid var(--gold); border-radius: 2px; cursor: pointer;
+  background: var(--gold); color: var(--near-black); transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+.nav-mobile-drawer {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
+  background: rgba(10,10,10,0.98); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  overflow: hidden; transition: max-height 0.3s ease;
+}
+.mobile-nav-link {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1rem;
+  border: 1px solid rgba(245,240,232,0.08); border-radius: 2px; cursor: pointer;
+  background: none; color: rgba(245,240,232,0.7); text-align: left; width: 100%;
+  transition: all 0.2s;
+}
+.mobile-nav-link-active { border-color: rgba(201,168,76,0.4); color: var(--gold); background: rgba(201,168,76,0.08); }
+.mobile-cta-btn {
+  margin-top: 0.25rem;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; padding: 0.85rem;
+  background: var(--gold); color: var(--near-black);
+  border: none; border-radius: 2px; cursor: pointer; width: 100%;
+}
+
+/* ── BUTTONS ── */
+.btn-primary { font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.9rem 2.2rem; background:var(--gold); color:var(--near-black); border:none; border-radius:2px; cursor:pointer; transition:background 0.2s,transform 0.15s; }
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-1px); }
+.btn-outline { font-family:'Barlow Condensed',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.9rem 2.2rem; background:none; color:var(--off-white); border:1px solid rgba(245,240,232,0.3); border-radius:2px; cursor:pointer; transition:border-color 0.2s,background 0.2s; }
+.btn-outline:hover { border-color:var(--off-white); background:rgba(245,240,232,0.05); }
+.btn-sm { font-family:'Barlow Condensed',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.4rem 0.9rem; border-radius:2px; cursor:pointer; transition:all 0.2s; border:1px solid transparent; }
+.btn-approve { background:rgba(74,222,128,0.1); color:#4ade80; border-color:rgba(74,222,128,0.3); }
+.btn-approve:hover { background:rgba(74,222,128,0.2); }
+.btn-deny { background:rgba(200,16,46,0.1); color:var(--red); border-color:rgba(200,16,46,0.3); }
+.btn-deny:hover { background:rgba(200,16,46,0.2); }
+.btn-action { background:rgba(201,168,76,0.08); color:var(--gold); border-color:rgba(201,168,76,0.25); }
+.btn-action:hover { background:rgba(201,168,76,0.18); }
+
+/* ── FORMS ── */
+.field { margin-bottom:1.1rem; }
+.field label { display:block; font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,240,232,0.45); margin-bottom:6px; }
+.field input, .field select { width:100%; background:rgba(245,240,232,0.05); border:1px solid rgba(245,240,232,0.12); border-radius:2px; color:var(--off-white); font-size:0.9rem; padding:0.7rem 0.9rem; outline:none; transition:border-color 0.2s; }
+.field input:focus, .field select:focus { border-color:var(--gold); }
+.field select option { background:var(--dark-gray); }
+
+/* ── PILLS ── */
+.pill { display:inline-flex; align-items:center; gap:5px; padding:0.25rem 0.75rem; border-radius:2px; font-family:'Barlow Condensed',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; }
+.pill-confirmed { background:rgba(74,222,128,0.1); color:#4ade80; border:1px solid rgba(74,222,128,0.3); }
+.pill-pending { background:rgba(201,168,76,0.1); color:var(--gold); border:1px solid rgba(201,168,76,0.3); }
+.pill-denied { background:rgba(200,16,46,0.1); color:var(--red); border:1px solid rgba(200,16,46,0.3); }
+
+/* ── TYPOGRAPHY ── */
+.section-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.5rem; }
+.section-heading { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,5vw,4rem); letter-spacing:0.05em; color:var(--off-white); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes spin { to { transform: rotate(360deg) } }
+.fade-up { animation:fadeUp 0.8s ease forwards; opacity:0; }
+.delay-1 { animation-delay:0.15s; }
+.delay-2 { animation-delay:0.3s; }
+.delay-3 { animation-delay:0.45s; }
+.delay-4 { animation-delay:0.6s; }
+.delay-5 { animation-delay:0.8s; }
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 768px) {
+  .nav-desktop-links { display: none; }
+  .nav-hamburger-btn { display: block; }
+  .nav-mobile-drawer { display: block; }
+}

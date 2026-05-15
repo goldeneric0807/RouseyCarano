@@ -1,0 +1,203 @@
+/* ── HERO ── */
+.hero {
+  position: relative; height: 100vh; min-height: 580px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.heroBg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(200,16,46,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,168,76,0.1) 0%, transparent 60%),
+              var(--near-black);
+}
+.heroGrain {
+  position: absolute; inset: 0; opacity: 0.04; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.heroDivider {
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.6) 30%, rgba(201,168,76,0.6) 70%, transparent);
+  transform: rotate(-3deg) scaleY(1.2);
+}
+.fighterLeft {
+  position: absolute; bottom: 0; left: 0; width: 42%; max-width: 460px;
+  display: flex; justify-content: flex-end; align-items: flex-end;
+  overflow: hidden;
+}
+.fighterRight {
+  position: absolute; bottom: 0; right: 0; width: 42%; max-width: 460px;
+  display: flex; justify-content: flex-start; align-items: flex-end;
+  overflow: hidden;
+}
+.heroCenter {
+  position: relative; z-index: 10; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  pointer-events: none;
+}
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+}
+.names { font-family: 'Bebas Neue', sans-serif; line-height: 0.9; letter-spacing: 0.04em; }
+.nameWhite { font-size: clamp(3rem, 9vw, 8rem); color: var(--off-white); display: block; }
+.vs {
+  font-family: 'Barlow Condensed', sans-serif; font-size: clamp(0.8rem, 2vw, 1.4rem);
+  font-weight: 300; letter-spacing: 0.5em; color: var(--gold); display: block; margin: 0.2rem 0;
+}
+.nameRed { font-size: clamp(3rem, 9vw, 8rem); color: var(--red); display: block; }
+.meta { margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+.metaDate { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(0.85rem,2vw,1.1rem); font-weight: 300; letter-spacing: 0.2em; color: rgba(245,240,232,0.7); }
+.liveBadge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--red); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 2px;
+}
+.liveDot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: pulse 1.5s infinite; }
+.scrollHint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0.4; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.scrollLine { width: 1px; height: 40px; background: var(--gold); }
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--red); padding: 0.7rem 1.5rem;
+  display: flex; align-items: center; gap: 1.5rem; overflow: hidden;
+}
+.tickerLabel { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.1em; color: #fff; white-space: nowrap; flex-shrink: 0; }
+.tickerDivider { width: 1px; height: 18px; background: rgba(255,255,255,0.4); flex-shrink: 0; }
+.tickerTrack { overflow: hidden; flex: 1; }
+.tickerItems { display: flex; gap: 2.5rem; animation: marquee 30s linear infinite; white-space: nowrap; }
+.tickerItem { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+
+/* ── TALE OF THE TAPE ── */
+.tapeSection { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.tapeGrid {
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 1px;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.15); border-radius: 4px; overflow: hidden;
+}
+.tapeFighter { background: var(--dark-gray); padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.tapeFighterRight { text-align: right; }
+.tapeName { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.4rem,3vw,2rem); letter-spacing: 0.05em; }
+.tapeRecord { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.1em; color: rgba(245,240,232,0.5); margin-bottom: 0.5rem; }
+.tapeStat { display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid rgba(245,240,232,0.06); font-family: 'Barlow Condensed', sans-serif; }
+.tapeStatRight { flex-direction: row-reverse; }
+.tapeVal { font-size: 1.1rem; font-weight: 600; color: var(--off-white); }
+.tapeKey { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+.tapeOdds { margin-top: 0.5rem; font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem,3vw,2.5rem); letter-spacing: 0.05em; }
+.tapeCenter {
+  background: var(--dark-gray); display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 1.5rem 1.25rem; gap: 1rem;
+  border-left: 1px solid rgba(201,168,76,0.15); border-right: 1px solid rgba(201,168,76,0.15);
+  min-width: 90px;
+}
+.tapeVsBig { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--gold); letter-spacing: 0.1em; }
+.tapeCenterStats { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+
+/* ── BIOS ── */
+.bioSection { background: var(--dark-gray); padding: 4rem 1.5rem; position: relative; overflow: hidden; }
+.bioSection::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(to left, rgba(200,16,46,0.05), transparent); pointer-events: none; }
+.bioGrid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; position: relative; }
+.bioName { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem,4vw,3rem); letter-spacing: 0.05em; margin-bottom: 0.25rem; line-height: 1; }
+.bioRecord { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(245,240,232,0.1); }
+.bioText { font-size: 0.88rem; font-weight: 300; line-height: 1.8; color: rgba(245,240,232,0.65); margin-bottom: 1.5rem; }
+.bioFacts { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.bioFactVal { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--off-white); line-height: 1; }
+.bioFactLabel { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.35); margin-top: 2px; }
+
+/* ── FIGHT CARD ── */
+.cardSection { padding: 3rem 1.5rem 4rem; max-width: 900px; margin: 0 auto; }
+.fightRow { border-bottom: 1px solid rgba(245,240,232,0.07); transition: background 0.2s; }
+.fightRow:hover { background: rgba(245,240,232,0.03); }
+.fightRowMain { border: 1px solid rgba(201,168,76,0.3); border-radius: 4px; background: rgba(201,168,76,0.04); margin-bottom: 1rem; }
+.fightRowInner { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; gap: 0.75rem; padding: 0.875rem 1.25rem; }
+.fightRowMain .fightRowInner { padding: 1rem 1.5rem 1.25rem; }
+.mainBadge { display: inline-block; background: var(--gold); color: var(--near-black); font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.7rem; border-radius: 2px; margin: 0.875rem 1.25rem 0; }
+.feName { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; color: var(--off-white); }
+.fightRowMain .feName { font-size: clamp(1rem,2.5vw,1.35rem); }
+.feRecord { font-size: 0.72rem; color: rgba(245,240,232,0.4); margin-top: 2px; }
+.feDivision { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 4px; }
+.feVs { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--gold); text-align: center; }
+
+/* ── CTA ── */
+.ctaSection { padding: 5rem 1.5rem; text-align: center; position: relative; overflow: hidden; background: var(--near-black); }
+.ctaSection::before { content: 'ROUSEY VS CARANO'; font-family: 'Bebas Neue', sans-serif; font-size: 12vw; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; color: rgba(245,240,232,0.02); letter-spacing: 0.05em; pointer-events: none; z-index: 0; }
+.ctaInner { position: relative; z-index: 1; }
+.ctaHeadline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem,6vw,5rem); letter-spacing: 0.05em; line-height: 1; margin-bottom: 1rem; }
+.ctaSub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 300; letter-spacing: 0.1em; color: rgba(245,240,232,0.5); margin-bottom: 2.5rem; }
+.ctaBtns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+.footer { background: var(--dark-gray); border-top: 1px solid rgba(201,168,76,0.15); padding: 1.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ── RULES SECTION ── */
+.rulesSection { padding: 4rem 1.5rem; background: var(--near-black); max-width: 1200px; margin: 0 auto; }
+.rulesGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.12); border-radius: 4px; overflow: hidden; margin-bottom: 2.5rem; }
+.ruleCard { background: var(--dark-gray); padding: 1.75rem; position: relative; transition: background 0.2s; }
+.ruleCard:hover { background: #1a1a1a; }
+.ruleNum { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(201,168,76,0.12); letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.5rem; }
+.ruleTitle { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.75rem; }
+.ruleBody { font-size: 0.84rem; font-weight: 300; line-height: 1.8; color: rgba(245,240,232,0.55); }
+
+/* ── PAYOUT EXAMPLE ── */
+.payoutExample { background: var(--dark-gray); border: 1px solid rgba(201,168,76,0.15); border-radius: 4px; padding: 2rem 1.5rem; }
+.payoutScenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+.payoutScenario { border-radius: 4px; overflow: hidden; border: 1px solid rgba(245,240,232,0.07); }
+.payoutScenarioHeader { padding: 0.875rem 1.125rem; border-bottom: 1px solid rgba(245,240,232,0.07); }
+.payoutRows { padding: 0.4rem 0; }
+.payoutRow { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 0.6rem; padding: 0.55rem 1.125rem; border-bottom: 1px solid rgba(245,240,232,0.04); }
+.payoutRow:last-child { border-bottom: none; }
+.payoutName { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--off-white); letter-spacing: 0.03em; }
+.payoutWagered { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; color: rgba(245,240,232,0.35); letter-spacing: 0.05em; white-space: nowrap; }
+.payoutArrow { color: rgba(245,240,232,0.2); font-size: 0.75rem; }
+.payoutAmount { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.05em; white-space: nowrap; }
+.payoutFormula { border-top: 1px solid rgba(201,168,76,0.15); padding-top: 1.5rem; text-align: center; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLET (max 900px)
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero { min-height: 500px; }
+  .fighterLeft, .fighterRight { width: 40%; }
+  .tapeGrid { grid-template-columns: 1fr; }
+  .tapeCenter { flex-direction: row; justify-content: center; border-left: none; border-right: none; border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.25rem; gap: 2rem; }
+  .tapeFighterRight { text-align: left; }
+  .tapeStatRight { flex-direction: row; }
+  .bioGrid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — MOBILE (max 640px)
+═══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .hero { min-height: 480px; height: 90vw; max-height: 640px; }
+  .fighterLeft, .fighterRight { width: 44%; }
+  .payoutScenarios { grid-template-columns: 1fr; }
+
+  .payoutRow { grid-template-columns: 1fr auto; gap: 0.4rem; }
+  .payoutWagered { display: none; }
+  .payoutArrow { display: none; }
+
+  .fightRowInner { grid-template-columns: 1fr 40px 1fr; gap: 0.5rem; padding: 0.75rem 1rem; }
+  .feName { font-size: 0.88rem; }
+  .feRecord { font-size: 0.65rem; }
+
+  .ctaBtns { flex-direction: column; align-items: center; }
+  .ctaBtns button { width: 100%; max-width: 280px; }
+
+  .ticker { padding: 0.6rem 1rem; gap: 0.75rem; }
+  .tickerLabel { font-size: 0.85rem; }
+
+  .rulesGrid { grid-template-columns: 1fr; }
+
+  .footer { justify-content: center; text-align: center; flex-direction: column; }
+
+  .payoutExample { padding: 1.25rem 1rem; }
+}
+
+@media (max-width: 400px) {
+  .fighterLeft, .fighterRight { width: 42%; }
+  .tapeSection, .bioSection, .cardSection, .rulesSection { padding-left: 1rem; padding-right: 1rem; }
+}

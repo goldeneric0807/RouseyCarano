@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="6" fill="#0f0020"/>
+
+  <!-- Gold "R" left, red "C" right — initials of the fight -->
+  <text x="4" y="23" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" fill="#C9A84C" letter-spacing="-1">R</text>
+  <text x="16" y="23" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" fill="#C8102E" letter-spacing="-1">C</text>
+
+  <!-- Thin gold divider line between the two letters -->
+  <line x1="15.5" y1="6" x2="15.5" y2="26" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.6"/>
+</svg>

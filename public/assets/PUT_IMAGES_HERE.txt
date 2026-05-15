@@ -1,0 +1,12 @@
+Place your fighter images in this folder:
+
+  rousey.jpg   — Photo of Ronda Rousey (full body or upper body, portrait orientation)
+  carano.jpg   — Photo of Gina Carano (full body or upper body, portrait orientation)
+
+Tips for best results:
+- Use portrait/vertical images (taller than wide)
+- Images with transparent or dark backgrounds look best
+- Full-body shots showing fighting stance are ideal
+- Good free sources: Google Images, Getty Images (for personal use), AP Images
+
+The site will automatically fall back to the SVG silhouettes if the images are missing.
