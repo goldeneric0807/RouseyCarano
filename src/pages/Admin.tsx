@@ -396,6 +396,7 @@ export default function Admin() {
   ]
 
   return (
+    <>
     <div style={{ minHeight: '100vh', background: 'var(--near-black)', paddingTop: 56 }}>
       {/* Admin Header */}
       <div style={{ background: 'var(--dark-gray)', borderBottom: '1px solid rgba(200,16,46,0.3)', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
@@ -989,6 +990,7 @@ export default function Admin() {
         </div>
       </div>
     )}
+    </>
   )
 }
 
